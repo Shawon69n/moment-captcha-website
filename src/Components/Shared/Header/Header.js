@@ -29,7 +29,7 @@ const Header = () => {
  <Nav>
    <Nav.Link as={Link} to="/home"><span className='text-white'>Home</span></Nav.Link>
    <Nav.Link as={Link} to="/services"><span className='text-white'>Services</span></Nav.Link>
-   <Nav.Link as={Link} to="/secret"><span className='text-white'>Checkout</span></Nav.Link>
+   <Nav.Link as={Link} to="/blogs"><span className='text-white'>Blogs</span></Nav.Link>
    {user? <button onClick={handleSignOut} className='btn btn-dark'><span className='text-white'>sign out</span></button> : <Nav.Link as={Link} to='/login'> <span className='text-white'>Log in</span></Nav.Link>}
    {user ? '' : <Nav.Link as={Link} to="/register"><span className='text-white'>Register</span></Nav.Link>}
  </Nav>

@@ -1,0 +1,102 @@
+
+.login-card{
+    width: 450px;
+    height: 550px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) -10px 10px,rgba(0, 0, 0, 0.3) -4px 5px,rgba(0, 0, 0, 0.3) -6px 7px,rgba(0, 0, 0, 0.3) -8px 9px;
+    border-top: 1px solid rgb(160, 160, 160) ;
+    border-right: 1px solid rgb(160, 160, 160) ;
+    border-radius: 5px;
+    margin: 4rem auto;
+    
+    
+}
+
+
+/* .login-container {
+    position: relative;
+    width: 350px;
+    margin: 4rem auto;
+    height: 500px;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #ecf0f3;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px rgba(88, 87, 87, 0.521);
+} */
+
+
+.login-title {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: #898ae0;
+    letter-spacing: 1px;
+}
+
+.login-form {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.login-container label,
+.login-container input {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.login-container label {
+    margin-bottom: 4px;
+    color: gray;
+    margin: 15px 0 5px 5px;
+    
+}
+
+.login-container input::placeholder {
+    color: rgb(100, 93, 93);
+}
+
+.login-container input {
+    background: #abbdcc;
+    margin: 15px 0 0 0;
+    padding: 10px;
+    padding-left: 20px;
+    height: 50px;
+    font-size: 14px;
+    border: 1px solid rgb(53, 50, 50);
+    
+   
+}
+
+.login-container button {
+    color: white;
+    margin-top: 20px;
+    background:  #898ae0;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    width: 50%;
+    transition: 0.5s;
+    margin-left: 90px;
+}
+
+.login-container button:hover {
+    box-shadow: none;
+    background-color: #686bff;
+}
+
+
+.error-message{
+    font-size: 12px;
+    color: red;
+    margin:10px;
+}
+.error-message::before{
+    content: "❌ ";
+}
