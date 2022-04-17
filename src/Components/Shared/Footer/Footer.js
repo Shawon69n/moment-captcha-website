@@ -8,21 +8,20 @@ const Footer = () => {
         <footer className=''>
            
             
-        <div class="container">
+        <div className="container">
 
-            <div class="row">
+            <div className="row">
 
-                <div class="col">
+                <div className="col">
                 <h3 className='text-white'>Moment captcha</h3>
                  <p>I like to capture wedding photography and i am very professional with that .</p>
                 </div>
 
-                <div class="col">
+                <div className="col">
                 <input type="email" placeholder='your email' />
                 <input className='inp-btn' type="button" value="Join now" />
                 </div>
-                <div class="col">
-                <h7 className='text-white'>Follow me</h7>
+                <div className="col">
                 <li><span className='icons'><RiFacebookCircleLine></RiFacebookCircleLine></span></li>
                 <li><span className='icons'><AiFillTwitterCircle></AiFillTwitterCircle></span></li>
                 <li><span className='icons'><GrInstagram></GrInstagram></span></li>

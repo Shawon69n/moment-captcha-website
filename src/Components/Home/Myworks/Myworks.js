@@ -16,7 +16,7 @@ const Myworks = () => {
 <div className="container round-img">
   <div className="row g-3 py-5">
     <div className="col-lg-4 col-md-6">
-        <img className='w-100' src={img1} alt="" />
+        <img  className='w-100' src={img1} alt="" />
        </div>
 
     <div className="col-lg-4 col-md-6">

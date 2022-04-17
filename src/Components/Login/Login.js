@@ -41,22 +41,22 @@ const Login = () => {
     }
     
     if(user){
-        navigate('/')
+        navigate('/home')
     }
 
     // Google sign in part 
     const [signInWithGoogle, GoogleUser, Gloading, Gerror] = useSignInWithGoogle(auth);
     if(GoogleUser){
-        navigate('/')
+        navigate('/home')
     }
 
     return (
         <div className="login-container login-card">
         <div className="login-title">LOGIN</div>
         <form onSubmit={handleOnSubmit} className="login-form">
-            <input onBlur={handleEmailOnBlur} type="text" placeholder="Your Email" />
+            <input onBlur={handleEmailOnBlur} type="text" placeholder="Your Email" required />
             
-            <input onBlur={handlePasswordOnBlur} type="password" placeholder="password"  />
+            <input onBlur={handlePasswordOnBlur} type="password" placeholder="password" required  />
             
             <button>Login</button>
 
@@ -67,7 +67,7 @@ const Login = () => {
             <p>Don't have an account? <Link to="/register">Sign up first</Link> </p>
             {error?  <p className='error-message'>{error}</p> : ''}
 
-            <button onClick={() => signInWithGoogle()}> <img src={Glogo} alt="" /> Google</button>
+            <button onClick={() => signInWithGoogle()}> <img style={{width:'25px'}} src={Glogo} alt="" /> sign in</button>
         </form>
 
         

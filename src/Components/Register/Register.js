@@ -16,7 +16,7 @@ const Register = () => {
         user,
         loading,
         hookError,
-      ] = useCreateUserWithEmailAndPassword(auth);
+      ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
 
     const handleOnSubmit = (e) =>{
         e.preventDefault();
@@ -25,7 +25,7 @@ const Register = () => {
     }
 
    if(user){
-    navigate('/')
+    navigate('/home')
    }
    
    
@@ -59,15 +59,15 @@ const Register = () => {
      const [signInWithGoogle, GoogleUser, Gloading, Gerror] = useSignInWithGoogle(auth);
     
      if(GoogleUser){
-        navigate('/')
+        navigate('/home')
     }
 
     return (
         <div className="login-container login-card">
         <div className="login-title">REGISTER</div>
         <form onSubmit={handleOnSubmit} className="login-form">
-            <input onBlur={handleEmailOnBlur} type="text" placeholder="Your Email" />
-            <input onBlur={handlePasswordOnBlur} type="password" placeholder="password"  />
+            <input onBlur={handleEmailOnBlur} type="text" placeholder="Your Email" required />
+            <input onBlur={handlePasswordOnBlur} type="password" placeholder="password" required />
             <input onBlur={handleConfirmPasswordOnBlur} type="password" placeholder="Confirm password"  />
             
             <button>Register</button>
@@ -80,7 +80,7 @@ const Register = () => {
             {/* {error?  <p className='error-message'>{error}</p> : ''} */}
                        
          {/* //google sign in button// */}
-         <button onClick={() => signInWithGoogle()}> <img src={Glogo} alt="" /> Google</button>
+         <button onClick={() => signInWithGoogle()}>  Register with <img style={{width:'25px'}} src={Glogo} alt="" /> </button>
         </form>
 
        

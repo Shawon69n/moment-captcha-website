@@ -1,0 +1,25 @@
+
+[
+    {
+        "id": 1,
+        "name": "Regular",
+        "price": "$3000",
+        "description": "1 senior photographer, unlimited photoshoot,Specially Edited Photos: 50 Photos + All edited, Capture: as much as possible.Duration: 5 Hours Event Coverage",
+        "img": "https://img.freepik.com/free-photo/black-camera-lens-blue-surface_417767-380.jpg?size=626&ext=jpg&uid=R27708938&ga=GA1.2.127636179.1641468019"
+    },
+    {
+        "id": 2,
+        "name": "Standard",
+        "price": "$6000",
+        "description": "1 cinematographer, full HD video,Cinematography Video and 2-3 Min Trailer/Highlight,All necessary light setup,Duration: 5 Hours Event Coverage",
+        "img": "https://img.freepik.com/free-photo/professional-lighting-equipment-movie-set-with-smoke-air_1268-17216.jpg?size=626&ext=jpg&uid=R27708938&ga=GA1.2.127636179.1641468019"
+    },
+    {
+        "id": 3,
+        "name": "Premium",
+        "price": "$10000",
+        "description": "1 senior photographer, 1 senior cinematographer , Unlimited photoshoot,Duration- Full event cover,All necessary light setup",
+        "img": "https://img.freepik.com/free-photo/man-doing-product-photography_23-2148970199.jpg?size=626&ext=jpg&uid=R27708938&ga=GA1.2.127636179.1641468019"
+    }
+
+]
