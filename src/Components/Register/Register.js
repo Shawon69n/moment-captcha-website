@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle} from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-
+import Glogo from '../../Assets/image/Logo/Glogo.png'
 const Register = () => {
 
     const [email,setEmail] = useState('');
@@ -54,14 +54,19 @@ const Register = () => {
             setError('password do not match')
         }
     }
+
+     // Google sign in part 
+     const [signInWithGoogle, GoogleUser, Gloading, Gerror] = useSignInWithGoogle(auth);
     
-    
+     if(GoogleUser){
+        navigate('/')
+    }
+
     return (
         <div className="login-container login-card">
         <div className="login-title">REGISTER</div>
         <form onSubmit={handleOnSubmit} className="login-form">
             <input onBlur={handleEmailOnBlur} type="text" placeholder="Your Email" />
-            
             <input onBlur={handlePasswordOnBlur} type="password" placeholder="password"  />
             <input onBlur={handleConfirmPasswordOnBlur} type="password" placeholder="Confirm password"  />
             
@@ -73,9 +78,12 @@ const Register = () => {
 
             <p>Already have an account? <Link to="/login">Log in</Link> </p>
             {/* {error?  <p className='error-message'>{error}</p> : ''} */}
+                       
+         {/* //google sign in button// */}
+         <button onClick={() => signInWithGoogle()}> <img src={Glogo} alt="" /> Google</button>
         </form>
 
-        {/* <button onClick={() => signInWithGoogle()}>Google</button> */}
+       
     </div>
     );
 };

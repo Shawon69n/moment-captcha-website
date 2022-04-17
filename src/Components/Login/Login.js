@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css'
+import Glogo from '../../Assets/image/Logo/Glogo.png'
 const Login = () => {
 
     const [email,setEmail] = useState('');
@@ -37,13 +38,17 @@ const Login = () => {
         signInWithEmailAndPassword(email,password)
         
        
-        
     }
     
     if(user){
         navigate('/')
     }
-    
+
+    // Google sign in part 
+    const [signInWithGoogle, GoogleUser, Gloading, Gerror] = useSignInWithGoogle(auth);
+    if(GoogleUser){
+        navigate('/')
+    }
 
     return (
         <div className="login-container login-card">
@@ -61,9 +66,11 @@ const Login = () => {
 
             <p>Don't have an account? <Link to="/register">Sign up first</Link> </p>
             {error?  <p className='error-message'>{error}</p> : ''}
+
+            <button onClick={() => signInWithGoogle()}> <img src={Glogo} alt="" /> Google</button>
         </form>
 
-        {/* <button onClick={() => signInWithGoogle()}>Google</button> */}
+        
     </div>
     );
 };
