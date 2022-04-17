@@ -1,9 +1,15 @@
 import React from 'react';
-import banner from '../../../Assets/image/Banner/banner2.jfif'
+import {IoIosArrowDown} from 'react-icons/io'
+import './Banner.css'
 const Banner = () => {
     return (
         <div>
-        <img style={{height:'800px'}} className='w-100 fluid' src={banner} alt="" />
+        <img style={{height:'600px'}} className='w-100' src={`https://static.dw.com/image/59176388_101.jpg`} alt="" />
+
+        <div className='text-style '>
+            <p className='fs-1'>Want to capture your wedding prefectly?</p>
+            <p className='fs-1 down-arrow'><IoIosArrowDown></IoIosArrowDown></p>
+        </div>
         </div>
     );
 };

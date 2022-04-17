@@ -31,7 +31,7 @@ const Header = () => {
    <Nav.Link as={Link} to="/services"><span className='text-white'>Services</span></Nav.Link>
    <Nav.Link as={Link} to="/blogs"><span className='text-white'>Blogs</span></Nav.Link>
    {user? <button onClick={handleSignOut} className='btn btn-dark'><span className='text-white'>sign out</span></button> : <Nav.Link as={Link} to='/login'> <span className='text-white'>Log in</span></Nav.Link>}
-   {user ? '' : <Nav.Link as={Link} to="/register"><span className='text-white'>Register</span></Nav.Link>}
+   {/* {user ? '' : <Nav.Link as={Link} to="/register"><span className='text-white'>Register</span></Nav.Link>} */}
  </Nav>
 </Navbar.Collapse>
 </Container>

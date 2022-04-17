@@ -11,7 +11,7 @@ const Service = ({service}) => {
         navigate(`/service/${id}`)
     }
     return (
-        <div className='m-3 box-shadow'>
+        <div className='m-3'>
         <Card style={{ width: '18rem' }}>
         <Card.Img variant="top"  src={img} />
         <Card.Body>
@@ -20,7 +20,7 @@ const Service = ({service}) => {
             {description}
           </Card.Text>
           <Card.Title>{price}</Card.Title>
-          <button onClick={() => handleSingleSeviceBtn(id)} className='btn btn-primary '>Book</button>
+          <Link to='/booking' onClick={() => handleSingleSeviceBtn(id)} className='custom-btn btn-3 button mb-5 frame '>Book</Link>
         </Card.Body>
       </Card>
         

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css'
 import Glogo from '../../Assets/image/Logo/Glogo.png'
@@ -10,6 +10,12 @@ const Login = () => {
     const [password,setPassword] = useState('');
     const [error,setError] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname ||  '/';
+
+
+
     const handleEmailOnBlur = (e) =>{
         const emailRegex = /\S+@\S+\.\S+/;
         const validEmail = emailRegex.test(e.target.value)
@@ -41,13 +47,13 @@ const Login = () => {
     }
     
     if(user){
-        navigate('/home')
+        navigate(from,{replace:true})
     }
 
     // Google sign in part 
     const [signInWithGoogle, GoogleUser, Gloading, Gerror] = useSignInWithGoogle(auth);
     if(GoogleUser){
-        navigate('/home')
+        navigate(from,{replace:true})
     }
 
     return (
