@@ -74,11 +74,9 @@ const Register = () => {
             <button>Register</button>
 
             {error && <p className="error-message">{error}</p> }
-            {/* {hookError && <p className="error-message">{hookError?.message}</p>} */}
-            
-
+        
             <p>Already have an account? <Link to="/login">Log in</Link> </p>
-            {/* {error?  <p className='error-message'>{error}</p> : ''} */}
+            
                        
          {/* //google sign in button// */}
          <button onClick={() => signInWithGoogle()}>  Register with <img style={{width:'25px'}} src={Glogo} alt="" /> </button>
