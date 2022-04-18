@@ -15,6 +15,7 @@ const Footer = () => {
                 <div className="col">
                 <h3 className='text-white'>Moment captcha</h3>
                  <p>I like to capture wedding photography and i am very professional with that .</p>
+                 <p><small>Copyright © 2020 by shawon</small></p>
                 </div>
 
                 <div className="col">
