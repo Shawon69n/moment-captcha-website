@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css'
@@ -28,10 +28,17 @@ const Login = () => {
         }
         
     }
+
+    const [sendPasswordResetEmail, sending, ResetError] = useSendPasswordResetEmail(auth );
+
+   
+
     const handlePasswordOnBlur = (e) =>{
         setPassword(e.target.value);
     }
     
+
+
     const [
         signInWithEmailAndPassword,
         user,
@@ -48,6 +55,20 @@ const Login = () => {
     
     if(user){
         navigate(from,{replace:true})
+    }
+
+    const resetPassword = async () =>{
+        await sendPasswordResetEmail(email);   
+        if(!email){ 
+            setError('user not found')
+        }
+        else{
+            
+            alert('sent email')
+        }
+        
+        
+       
     }
 
     // Google sign in part 
@@ -72,6 +93,8 @@ const Login = () => {
 
             <p>Don't have an account? <Link to="/register">Sign up first</Link> </p>
             {error?  <p className='error-message'>{error}</p> : ''}
+
+            <p>Don't have an account? <Link to="/login"  onClick={resetPassword}>reset password</Link> </p>
 
             <button onClick={() => signInWithGoogle()}> <img style={{width:'25px'}} src={Glogo} alt="" /> sign in</button>
         </form>

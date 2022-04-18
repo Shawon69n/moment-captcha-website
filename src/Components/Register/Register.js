@@ -21,6 +21,7 @@ const Register = () => {
     const handleOnSubmit = (e) =>{
         e.preventDefault();
         createUserWithEmailAndPassword(email,password)
+   
         
     }
 
