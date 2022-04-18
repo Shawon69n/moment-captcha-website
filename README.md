@@ -9,7 +9,14 @@
 * It has authentication system .
 * It has navbar with routes . 
 
+### Used Frame work : 
 
+1. React router
+2. Firebase 
+3. React hooks 
+4. Bootstrap 
+5. React icons 
+6. React Toastify
 
 
 
