@@ -12,6 +12,7 @@ import Services from './Components/Services/Services/Services';
 
 import Footer from './Components/Shared/Footer/Footer';
 import Header from './Components/Shared/Header/Header';
+import NotFound from './Components/Shared/NotFound/NotFound';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Route path='/blogs' element={<Blogs></Blogs>}></Route>
       <Route path='/login' element={<Login></Login>}></Route>
       <Route path='/register' element={<Register></Register>}></Route>
+      <Route path='*' element={<NotFound></NotFound>}></Route>
     </Routes>
 
     <Footer></Footer>
