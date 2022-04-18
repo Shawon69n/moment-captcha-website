@@ -13,19 +13,6 @@
 }
 
 
-/* .login-container {
-    position: relative;
-    width: 350px;
-    margin: 4rem auto;
-    height: 500px;
-    border-radius: 20px;
-    padding: 40px;
-    box-sizing: border-box;
-    background: #ecf0f3;
-    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px rgba(88, 87, 87, 0.521);
-} */
-
-
 .login-title {
     text-align: center;
     margin-top: 10px;
@@ -91,6 +78,11 @@
     box-shadow: none;
     background-color: #686bff;
 }
+
+.text-deco{
+    text-decoration: none;
+}
+
 
 
 .error-message{

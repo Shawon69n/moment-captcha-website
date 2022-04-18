@@ -4,6 +4,9 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css'
 import Glogo from '../../Assets/image/Logo/Glogo.png'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Login = () => {
 
     const [email,setEmail] = useState('');
@@ -64,7 +67,7 @@ const Login = () => {
         }
         else{
             
-            alert('sent email')
+            toast('Reset password mail sent')
         }
         
         
@@ -87,18 +90,18 @@ const Login = () => {
             
             <button>Login</button>
 
-            {/* {error && <p className="error-message">{error}</p> } */}
-            {/* {hookError && <p className="error-message">{hookError?.message}</p>} */}
+            {error && <p className="error-message">{error}</p> }
+            {hookError && <p className="error-message">{hookError?.message}</p>}
             
 
-            <p>Don't have an account? <Link to="/register">Sign up first</Link> </p>
-            {error?  <p className='error-message'>{error}</p> : ''}
+            <p className='mt-2'>Don't have an account? <Link className='text-deco' to="/register">Sign up first</Link> </p>
 
-            <p>Don't have an account? <Link to="/login"  onClick={resetPassword}>reset password</Link> </p>
+            <p>Forget password? <Link className='text-deco' to="/login"  onClick={resetPassword}>Reset password</Link> </p>
 
             <button onClick={() => signInWithGoogle()}> <img style={{width:'25px'}} src={Glogo} alt="" /> sign in</button>
         </form>
 
+        <ToastContainer></ToastContainer>
         
     </div>
     );

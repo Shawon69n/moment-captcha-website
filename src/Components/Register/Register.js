@@ -67,6 +67,7 @@ const Register = () => {
         <div className="login-container login-card">
         <div className="login-title">REGISTER</div>
         <form onSubmit={handleOnSubmit} className="login-form">
+            <input type="text" placeholder="Your Name" required />
             <input onBlur={handleEmailOnBlur} type="text" placeholder="Your Email" required />
             <input onBlur={handlePasswordOnBlur} type="password" placeholder="password" required />
             <input onBlur={handleConfirmPasswordOnBlur} type="password" placeholder="Confirm password"  />
@@ -75,7 +76,7 @@ const Register = () => {
 
             {error && <p className="error-message">{error}</p> }
         
-            <p>Already have an account? <Link to="/login">Log in</Link> </p>
+            <p className='mt-2'>Already have an account? <Link className='text-deco' to="/login">Log in</Link> </p>
             
                        
          {/* //google sign in button// */}
